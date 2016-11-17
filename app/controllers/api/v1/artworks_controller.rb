@@ -7,7 +7,7 @@ module Api
       end
 
       def show
-        render json: Artwork.find(params[:id])
+        render json: Artwork.find_by(id: params[:id])
       end
 
       def new
