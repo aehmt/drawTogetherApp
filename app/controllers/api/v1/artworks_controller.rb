@@ -25,7 +25,7 @@ module Api
       private
 
       def artwork_params
-        params.require(:artwork).permit(:editable, state: [])
+        params.require(:artwork).permit(:editable, :state)
       end
 
 
