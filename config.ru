@@ -12,6 +12,6 @@ use Rack::Cors do
     origins '*'
     resource '*',
         :headers => :any,
-        :methods => [:get, :post, :put, :options]
+        :methods => [:get, :post, :put, :patch, :options]
   end
 end
