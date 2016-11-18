@@ -13,10 +13,13 @@ module Api
       end
 
       def new
+        @artwork = Artwork.new
       end
 
       ###  POST   /api/v1/artworks(.:format)          api/v1/artworks#create
       def create
+        @artwork = Artwork.create(artwork_params)
+        render json: @artwork
       end
 
       def edit

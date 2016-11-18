@@ -1,3 +1,3 @@
 class Artwork < ApplicationRecord
-  serialize :state
+  # serialize :state
 end
