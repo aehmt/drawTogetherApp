@@ -27,10 +27,18 @@ module Api
       end
 
       def edit
+        @artwork = Artwork.find_by(id: params[:id])
       end
 
       ###  PUT    /api/v1/artworks/:id(.:format)      api/v1/artworks#update
       def update
+        @artwork = Artwork.find_by(id: params[:id])
+        @artwork.update(artwork_params)
+        if @artwork.errors.empty?
+          render json: @artwork
+        else
+          render json: @artwork.errors, layout: false, status: 422
+        end
       end
 
       private

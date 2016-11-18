@@ -1,0 +1,10 @@
+<%= form_for @artwork, :url => api_v1_artwork_path, :method => "PATCH" do |f|%>
+  <p>
+    <strong>Create a New Artwork</strong>
+  </p><p>
+  <%= f.label "image text blob: " %> <br>
+  <%= f.text_area :state %> <br>
+  </p>
+  <%= f.submit "Edit" %>
+
+<% end %>
