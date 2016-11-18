@@ -4,7 +4,7 @@ module Api
 
       ### GET    /api/v1/artworks(.:format)          api/v1/artworks#index
       def index
-        render json: Artwork.all
+        render json: Artwork.all.order(:id)
       end
 
       ### GET    /api/v1/artworks/:id(.:format)      api/v1/artworks#show
