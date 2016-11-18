@@ -19,7 +19,11 @@ module Api
       ###  POST   /api/v1/artworks(.:format)          api/v1/artworks#create
       def create
         @artwork = Artwork.create(artwork_params)
-        render json: @artwork
+        if @artwork.errors
+          render json: @artwork.errors, layout: false, status: 422
+        else
+          render json: @artwork
+        end
       end
 
       def edit
