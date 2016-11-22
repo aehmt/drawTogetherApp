@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo is a rails backend API for REACT application Draw Together. Repo for the frontend can be found here: https://github.com/cngonzalez/dt-react
 
-Things you may want to cover:
 
-* Ruby version
+Both the drawing app
 
-* System dependencies
+http://dt-react.herokuapp.com/rooms
 
-* Configuration
+as well as this backend API:
 
-* Database creation
+https://dry-fortress-11373.herokuapp.com/
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+are live at [heroku](https://www.heroku.com/).

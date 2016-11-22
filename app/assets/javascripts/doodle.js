@@ -27,10 +27,10 @@ function weAreStatic(){
   var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
   ctx.font = "40px Arial";
-  ctx.strokeText("We Are Not Interactive Yet",125,325);
+  ctx.strokeText("The API is no lie",175,325);
 }
 
-$(function(){
+$(document).ready(function(){
   drawALine();
   drawCircles();
   weAreStatic();
