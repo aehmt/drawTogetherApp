@@ -1,7 +1,6 @@
 module Api
   module V1
     class ArtworksController < ApplicationController
-
       ### GET    /api/v1/artworks(.:format)          api/v1/artworks#index
       def index
         render json: Artwork.all.order(:id)
@@ -19,10 +18,11 @@ module Api
       ###  POST   /api/v1/artworks(.:format)          api/v1/artworks#create
       def create
         @artwork = Artwork.create(artwork_params)
-        if @artwork.errors.empty?
+        errs = @artwork.errors
+        if errs.empty?
           render json: @artwork
         else
-          render json: @artwork.errors, layout: false, status: 422
+          render json: errs, layout: false, status: 422
         end
       end
 
@@ -34,10 +34,11 @@ module Api
       def update
         @artwork = Artwork.find_by(id: params[:id])
         @artwork.update(artwork_params)
-        if @artwork.errors.empty?
+        errs = @artwork.errors
+        if errs.empty?
           render json: @artwork
         else
-          render json: @artwork.errors, layout: false, status: 422
+          render json: errs, layout: false, status: 422
         end
       end
 
@@ -46,7 +47,6 @@ module Api
       def artwork_params
         params.require(:artwork).permit(:editable, :state)
       end
-
 
     end
   end
